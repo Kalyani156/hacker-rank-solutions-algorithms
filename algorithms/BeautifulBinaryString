@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class BeautifulBinaryString {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		String s = in.next();
+		String findStr = "010";
+		int lastIndex = 0;
+		int count = 0;
+
+		while (lastIndex != -1) {
+
+			lastIndex = s.indexOf(findStr, lastIndex);
+
+			if (lastIndex != -1) {
+				count++;
+				lastIndex += findStr.length();
+			}
+		}
+		if (s.indexOf(findStr) == -1) {
+			count = 0;
+		}
+		System.out.println(count);
+
+	}
+}
