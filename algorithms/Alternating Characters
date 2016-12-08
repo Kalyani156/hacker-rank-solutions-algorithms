@@ -1,0 +1,31 @@
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class AlternateCharacter {
+	 public static void main(String[] args) {
+	        Scanner in = new Scanner(System.in);
+	        int n = in.nextInt();
+	        List<Integer> list=new ArrayList<Integer>();
+ 	    for(int i=0; i<n; i++){
+	    	String finalStr= in.next();
+	    	list.add(getSolve(finalStr));
+	    }
+ 	    for(int a:list)
+ 	    {
+ 	    	System.out.println(a);
+ 	    }
+	}
+	public static int getSolve(String str){
+	    char first, second; int count=0;
+	    for(int i=0; i<str.length()-1; i++){
+	       first= str.charAt(i);
+	       second= str.charAt(i+1);
+	       if(first==second){
+	           count++;
+	       }
+	    }
+	   return count;
+	}
+}
