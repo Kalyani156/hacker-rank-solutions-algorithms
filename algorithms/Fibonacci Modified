@@ -1,0 +1,27 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class FibonacciModified {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		BigInteger t1=scan.nextBigInteger();
+		BigInteger t2=scan.nextBigInteger();
+		BigInteger n=scan.nextBigInteger();
+		long n1=n.longValue();
+		int count=2;
+		BigInteger nextTerm = new BigInteger("1");
+		for(int i=0;i<n1;i++)
+		{
+			count++;
+			BigInteger bigIntMult=t2.multiply(t2);
+			nextTerm=t1.add(bigIntMult);
+			t1 = t2.add(BigInteger.ZERO);
+			t2 =nextTerm.add(BigInteger.ZERO);
+			if(count==n1)
+			{
+				System.out.println(nextTerm);
+			}
+			
+		}
+	}
+}
